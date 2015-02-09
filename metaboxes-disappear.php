@@ -34,6 +34,7 @@ add_action('admin_menu','remove_my_page_metaboxes');
 
 function remove_dashboard_widgets(){
     remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');   // Activity
     remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
     remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // Incoming Links
     remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // Plugins
