@@ -9,7 +9,7 @@
  * License: GPL2
  */
 
-add_action('admin_menu','remove_my_post_metaboxes');
+
 function remove_my_post_metaboxes() {
 	function remove_my_post_metaboxes() {
 		remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
@@ -22,7 +22,8 @@ function remove_my_post_metaboxes() {
 		remove_meta_box( 'trackbacksdiv','post','normal' ); // Trackback Metabox
 	}
 }
-add_action('admin_menu','remove_my_page_metaboxes');
+add_action('admin_menu','remove_my_post_metaboxes');
+
 function remove_my_page_metaboxes() {
 	function remove_my_post_metaboxes() {
 		remove_meta_box( 'postcustom','page','normal' ); // Custom Fields Metabox
@@ -33,3 +34,4 @@ function remove_my_page_metaboxes() {
 		remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
 	}
 }
+add_action('admin_menu','remove_my_page_metaboxes');
