@@ -3,7 +3,7 @@
  * Plugin Name: I Hate Metaboxes 
  * Plugin URI: http://GrantAustin.org
  * Description: This plugin removes metaboxes that get outlandish. Best for EDM Assassin (and other multi-user blogs.
- * Version: 0.0.3
+ * Version: 1.0.6
  * Author: Grant Austin
  * Author URI: http://GrantAustin.org
  * License: GPL2
@@ -19,6 +19,10 @@ function remove_my_post_metaboxes() {
 	remove_meta_box( 'revisionsdiv','post','normal' ); // Revisions Metabox
 	remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
 	remove_meta_box( 'trackbacksdiv','post','normal' ); // Trackback Metabox
+	remove_meta_box( 'wpseo_meta','post','normal' ); // Yoast SEO
+	remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO 
+	remove_meta_box( 'genesis_inpost_layout_box','post','normal' ); // Genesis Layouts 
+	remove_meta_box( 'genesis_inpost_scripts_box','post','normal' ); // Genesis Scripts 
 }
 add_action('admin_menu','remove_my_post_metaboxes');
 
@@ -29,6 +33,10 @@ function remove_my_page_metaboxes() {
 	remove_meta_box( 'trackbacksdiv','page','normal' ); // Talkback Metabox
 	remove_meta_box( 'slugdiv','page','normal' ); // Slug Metabox
 	remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
+	remove_meta_box( 'wpseo_meta','post','normal' ); // Yoast SEO
+	remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO
+	remove_meta_box( 'genesis_inpost_layout_box','post','normal' ); // Genesis Layouts 
+	remove_meta_box( 'genesis_inpost_scripts_box','post','normal' ); // Genesis Scripts 
 }
 add_action('admin_menu','remove_my_page_metaboxes');
 
