@@ -2,8 +2,8 @@
 /**
  * Plugin Name: I Hate Metaboxes 
  * Plugin URI: http://GrantAustin.org
- * Description: This plugin adds some Facebook Open Graph tags to our single posts.
- * Version: 1.0.3
+ * Description: This plugin removes metaboxes that get outlandish. Best for EDM Assassin (and other multi-user blogs.
+ * Version: 0.0.3
  * Author: Grant Austin
  * Author URI: http://GrantAustin.org
  * License: GPL2
@@ -31,3 +31,15 @@ function remove_my_page_metaboxes() {
 	remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
 }
 add_action('admin_menu','remove_my_page_metaboxes');
+
+function remove_dashboard_widgets(){
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // Recent Comments
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');  // Incoming Links
+    remove_meta_box('dashboard_plugins', 'dashboard', 'normal');   // Plugins
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');  // Quick Press
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');   // WordPress blog
+    remove_meta_box('dashboard_secondary', 'dashboard', 'side');   // Other WordPress News
+}
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
