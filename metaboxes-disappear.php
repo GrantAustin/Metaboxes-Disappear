@@ -3,7 +3,7 @@
  * Plugin Name: I Hate Metaboxes 
  * Plugin URI: http://GrantAustin.org
  * Description: This plugin adds some Facebook Open Graph tags to our single posts.
- * Version: 1.0.0
+ * Version: 1.0.2
  * Author: Grant Austin
  * Author URI: http://GrantAustin.org
  * License: GPL2
@@ -25,7 +25,7 @@ function remove_my_post_metaboxes() {
 add_action('admin_menu','remove_my_post_metaboxes');
 
 function remove_my_page_metaboxes() {
-	function remove_my_post_metaboxes() {
+	function remove_my_page_metaboxes() {
 		remove_meta_box( 'postcustom','page','normal' ); // Custom Fields Metabox
 		remove_meta_box( 'postexcerpt','page','normal' ); // Excerpt Metabox
 		remove_meta_box( 'commentstatusdiv','page','normal' ); // Comments Metabox
