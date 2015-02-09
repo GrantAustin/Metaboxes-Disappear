@@ -20,7 +20,8 @@ function remove_my_post_metaboxes() {
 	remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
 	remove_meta_box( 'trackbacksdiv','post','normal' ); // Trackback Metabox
 	remove_meta_box( 'wpseo_meta','post','normal' ); // Yoast SEO
-	remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO 
+	//remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO 
+	remove_meta_box( 'genesis_inpost_seo_box', __( 'Theme SEO Settings', 'genesis' ), 'genesis_inpost_seo_box', $type, 'normal', 'high' );
 	remove_meta_box( 'genesis_inpost_layout_box','post','normal' ); // Genesis Layouts 
 	remove_meta_box( 'genesis_inpost_scripts_box','post','normal' ); // Genesis Scripts 
 }
