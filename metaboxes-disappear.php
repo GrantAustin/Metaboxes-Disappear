@@ -9,12 +9,13 @@
  * License: GPL2
  */
 
-if( current_user_can('families') ) {
 	function remove_my_post_metaboxes() {
 		remove_meta_box( 'commentstatusdiv','post','normal' ); // Discussion Metabox
 		remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
 		remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
 		remove_meta_box( 'wpseo_meta', 'post', 'normal' );
+		remove_meta_box( 'genesis-cpt-archives-seo-settings', $_genesis_cpt_settings_pagehook, 'main' );
+		remove_meta_box( 'genesis-cpt-archives-layout-settings', $_genesis_cpt_settings_pagehook, 'main' );
 	}
 	add_action('admin_menu','remove_my_post_metaboxes');
 
@@ -35,6 +36,6 @@ if( current_user_can('families') ) {
 		remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');  // Recent Drafts
 		remove_meta_box('dashboard_primary', 'dashboard', 'side');   // WordPress blog
 		remove_meta_box('dashboard_secondary', 'dashboard', 'side');   // Other WordPress News
+		remove_meta_box( 'tribe_dashboard_widget', 'dashboard', 'side' );
 	}
-}
 	add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
