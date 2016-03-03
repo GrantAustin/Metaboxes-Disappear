@@ -2,7 +2,7 @@
 /**
  * Plugin Name: I Hate Metaboxes 
  * Plugin URI: http://GrantAustin.org
- * Description: This plugin removes metaboxes that get outlandish. Best for EDM Assassin (and other multi-user blogs.
+ * Description: This plugin removes metaboxes that get outlandish. Best for The EDM Family (and other multi-user blogs.
  * Version: 1.0.6
  * Author: Grant Austin
  * Author URI: http://GrantAustin.org
@@ -11,35 +11,18 @@
 
 
 function remove_my_post_metaboxes() {
-	remove_meta_box( 'authordiv','post','normal' ); // Author Metabox
-	remove_meta_box( 'commentstatusdiv','post','normal' ); // Comments Status Metabox
-	remove_meta_box( 'commentsdiv','post','normal' ); // Comments Metabox
+	remove_meta_box( 'commentstatusdiv','post','normal' ); // Discussion Metabox
 	remove_meta_box( 'postcustom','post','normal' ); // Custom Fields Metabox
 	remove_meta_box( 'postexcerpt','post','normal' ); // Excerpt Metabox
-	remove_meta_box( 'revisionsdiv','post','normal' ); // Revisions Metabox
-	remove_meta_box( 'slugdiv','post','normal' ); // Slug Metabox
-	remove_meta_box( 'trackbacksdiv','post','normal' ); // Trackback Metabox
-	remove_meta_box( 'wpseo_meta','post','normal' ); // Yoast SEO
-	//remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO 
-	remove_meta_box( 'genesis_inpost_seo_box', __( 'Theme SEO Settings', 'genesis' ), 'genesis_inpost_seo_box', $type, 'normal', 'high' );
-	remove_meta_box( 'genesis_inpost_layout_box','post','normal' ); // Genesis Layouts 
-	remove_meta_box( 'genesis_inpost_scripts_box','post','normal' ); // Genesis Scripts 
 }
 add_action('admin_menu','remove_my_post_metaboxes');
 
-function remove_my_page_metaboxes() {
-	remove_meta_box( 'postcustom','page','normal' ); // Custom Fields Metabox
-	remove_meta_box( 'postexcerpt','page','normal' ); // Excerpt Metabox
-	remove_meta_box( 'commentstatusdiv','page','normal' ); // Comments Metabox
-	remove_meta_box( 'trackbacksdiv','page','normal' ); // Talkback Metabox
-	remove_meta_box( 'slugdiv','page','normal' ); // Slug Metabox
-	remove_meta_box( 'authordiv','page','normal' ); // Author Metabox
-	remove_meta_box( 'wpseo_meta','post','normal' ); // Yoast SEO
-	remove_meta_box( 'genesis_inpost_seo_box','post','normal' ); // Genesis SEO
-	remove_meta_box( 'genesis_inpost_layout_box','post','normal' ); // Genesis Layouts 
-	remove_meta_box( 'genesis_inpost_scripts_box','post','normal' ); // Genesis Scripts 
+function remove_my_events_metaboxes() {
+	remove_meta_box( 'commentstatusdiv','events','normal' ); // Discussion Metabox
+	remove_meta_box( 'postcustom','events','normal' ); // Custom Fields Metabox
+	remove_meta_box( 'postexcerpt','events','normal' ); // Excerpt Metabox
 }
-add_action('admin_menu','remove_my_page_metaboxes');
+add_action('admin_menu','remove_my_events_metaboxes');
 
 function remove_dashboard_widgets(){
     remove_meta_box('dashboard_right_now', 'dashboard', 'normal');   // Right Now
